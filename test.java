@@ -1,4 +1,3 @@
-
 public class Item {
 	
 	private int userID;
@@ -16,6 +15,8 @@ public class Item {
 	}
 	
 	public void createItem(int iQuality, int iType) {
+		//use SQL statement to get table size
+		itemID = tablesize + 1;
 		//get all items with given item quality and type
 		//for sql SELECT * FROM iPREFIXES WHERE itemQuality = iQuality AND prefixType = iType);
 		String pName; //from ^
@@ -45,6 +46,6 @@ public class Item {
 		String tdef = pdef + idef + sdef;
 		String tcrit = pdef + idef + sdef;
 		String tblock = pblock + iblock + sblock;
-		//INSERT into items table, userID = userID, itemID = ??, itemName = tname...., location = ??
+		//INSERT into items table, userID = userID, itemID = itemID, itemName = tname...., location = bag, itemValue = Math.random()
 	}
 }
